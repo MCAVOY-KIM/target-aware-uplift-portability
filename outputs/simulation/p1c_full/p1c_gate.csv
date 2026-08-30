@@ -1,0 +1,17 @@
+scenario,source_specific_anti_undercoverage_pass,source_specific_bound_pass,familywise_false_certificate_pass_le_05,outcome_fit_success_pass_ge_98,clear_n80000_stress_informativeness_pass,dr_one_nuisance_misspec_coverage_pass_ge_92
+core_n20000_ess0.8_near,True,True,True,True,,
+core_n20000_ess0.8_clear,True,True,True,True,,
+core_n20000_ess0.5_near,True,True,True,True,,
+core_n20000_ess0.5_clear,True,True,True,True,,
+core_n20000_ess0.3_near,True,True,True,True,,
+core_n20000_ess0.3_clear,True,True,True,True,,
+core_n80000_ess0.8_near,True,True,True,True,,
+core_n80000_ess0.8_clear,True,True,True,True,True,
+core_n80000_ess0.5_near,True,True,True,True,,
+core_n80000_ess0.5_clear,False,True,True,True,True,
+core_n80000_ess0.3_near,True,True,True,True,,
+core_n80000_ess0.3_clear,True,True,True,True,,
+stress_irrelevant,True,True,True,True,,
+stress_outcome_misspec,True,True,True,True,,True
+stress_ratio_misspec,True,True,True,True,,True
+stress_both_misspec,True,True,True,True,,

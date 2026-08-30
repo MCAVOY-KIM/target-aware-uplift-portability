@@ -1,0 +1,87 @@
+{
+  "stage": "Criteo R1 Population Construction and Source Model Library",
+  "raw_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "r0_shift_definition_sha256": "e8dc000594f7e50415687c414ca10895a935e150cf072ff6dba19bc6450d44f1",
+  "r01_pc1_materialization_sha256": "5647eb9ad37606cb4b016622b622a245727ca1d1a1af6e86312b253a311dc6c1",
+  "membership_seed": 2026082803,
+  "role_seed": 2026082805,
+  "source_split": {
+    "train": 0.3,
+    "select": 0.2,
+    "infer": 0.5
+  },
+  "target_split": {
+    "adapt": 0.25,
+    "infer": 0.75
+  },
+  "primary_outcome": "visit",
+  "target_outcomes_used": false,
+  "source_selection_metric": "IPW incremental policy gain on independent source_select",
+  "treatment_propensity": 0.85,
+  "budgets": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "model_library": [
+    "S-Logit",
+    "T-Logit",
+    "S-HGB",
+    "T-HGB",
+    "TO-HGB",
+    "DR-HGB"
+  ],
+  "model_hyperparameters": {
+    "S-Logit": "standardized logistic; X+A+A*X; C=1; lbfgs; max_iter=250",
+    "T-Logit": "two standardized arm-specific logistic models; C=1",
+    "S-HGB": {
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "n_iter_no_change": 15,
+      "random_state": 20260828
+    },
+    "T-HGB": {
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "n_iter_no_change": 15,
+      "random_state": 20260828
+    },
+    "TO-HGB": {
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "n_iter_no_change": 15,
+      "random_state": 20260828
+    },
+    "DR-HGB": {
+      "learning_rate": 0.05,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "early_stopping": true,
+      "validation_fraction": 0.1,
+      "n_iter_no_change": 15,
+      "random_state": 20260828
+    }
+  },
+  "note": "No hyperparameter tuning on source_select or target data."
+}

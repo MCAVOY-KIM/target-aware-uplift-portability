@@ -1,0 +1,43 @@
+{
+  "mode": "full",
+  "alpha": 0.05,
+  "epsilon": 0.005,
+  "budgets": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "candidate_models": 6,
+  "covariates": 10,
+  "outcome": "continuous Gaussian primary validity DGP; exact analytic target truth",
+  "treatment_propensity": 0.5,
+  "bootstrap": "Global two-sided Gaussian max-t plus source-specific one-sided Gaussian max-t",
+  "source_split": [
+    0.3,
+    0.2,
+    0.5
+  ],
+  "target_split": [
+    0.25,
+    0.75
+  ],
+  "tau_scale_by_separation": {
+    "near": 0.5,
+    "moderate": 1.0,
+    "clear": 3.0
+  },
+  "calibration_coverage_gate": [
+    0.9,
+    0.99
+  ],
+  "full_coverage_gate": [
+    0.93,
+    0.97
+  ],
+  "portability_bound_min_full": 0.93,
+  "false_certificate_conditional_gate": 0.05,
+  "clear_source_certificate_gate": 0.7,
+  "p1b1_amendment": "Primary certificate uses only independently preselected source-winner contrasts across budgets; global confidence set retained as secondary.",
+  "seed_base": 202608271,
+  "bootstrap_draws": 2000
+}

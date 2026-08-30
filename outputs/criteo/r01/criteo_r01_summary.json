@@ -1,0 +1,13 @@
+{
+  "stage": "Criteo R0.1 Shift Materialization Audit",
+  "raw_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "rows": 13979592,
+  "pilot_n": 250000,
+  "pca_max_abs_loading_diff": 7.216449660063518e-16,
+  "pca_score_std_diff": 8.881784197001252e-16,
+  "pca_explained_variance_ratio_diff": 1.6653345369377348e-16,
+  "all_target_share_pass": true,
+  "all_ess_generalization_pass": true,
+  "outcome_blinding": "No treatment, visit, conversion, or exposure columns read in R0.1.",
+  "note": "Frozen R0 beta/intercept are audited, never recalibrated."
+}

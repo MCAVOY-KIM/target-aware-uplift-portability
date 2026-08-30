@@ -1,0 +1,4 @@
+scenario,r2_policy_rates_reproduced_absdiff_le_1e12,all_target_infer_policy_rates_within_005,target_propensity_overlap_pass,target_propensity_calibration_large_pass_le_002,target_propensity_max_bin_calibration_pass_le_01,target_weighted_balance_pass_max_smd_le_02,target_outcome_nuisance_event_support_pass,all_benchmark_contrasts_finite,benchmark_corr_psd_numeric_pass,target_outcomes_unlocked
+null_ess1.0,True,True,True,True,True,True,True,True,True,True
+pc1_ess0.8,True,True,True,True,True,True,True,True,True,True
+pc1_ess0.5,True,True,True,True,True,True,True,True,True,True

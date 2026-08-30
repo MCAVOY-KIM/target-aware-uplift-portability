@@ -1,0 +1,4 @@
+scenario,realized_ess_pass_within_03,split_size_pass,source_train_randomization_pass_within_005,six_models_fit_pass,finite_source_selection_pass,target_outcome_blinding_pass
+null_ess1.0,True,True,True,True,True,True
+pc1_ess0.8,True,True,True,True,True,True
+pc1_ess0.5,True,True,True,True,True,True

@@ -1,0 +1,26 @@
+{
+  "stage": "Criteo R1 Population Construction and Source Model Library",
+  "rows": 13979592,
+  "scenarios": [
+    "null_ess1.0",
+    "pc1_ess0.8",
+    "pc1_ess0.5"
+  ],
+  "models": [
+    "S-Logit",
+    "T-Logit",
+    "S-HGB",
+    "T-HGB",
+    "TO-HGB",
+    "DR-HGB"
+  ],
+  "budgets": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "all_gate_pass": true,
+  "target_outcomes_used": false,
+  "source_infer_outcomes_used": false,
+  "next_stage_if_pass": "R2 target-X-only portability inference; source_infer outcomes become available there."
+}

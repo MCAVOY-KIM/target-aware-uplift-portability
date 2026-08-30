@@ -1,0 +1,9 @@
+{
+  "stage": "Criteo R1F Technical Finalization",
+  "r1_sha256": "1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e",
+  "r12_sha256": "99453d9155046977d73a5687ec1a6ff62103d9e9bee80d1cbf205c2a6fc472ce",
+  "all_technical_finalization_gates_pass": false,
+  "r12_strict_propensity_gate_status": "FAIL remains permanent",
+  "criteo_role": "secondary large-scale real-data application/benchmark, not primary causal validation",
+  "next_if_pass": "Freeze R1F source winners. Proceed to R2 with target outcomes still hidden."
+}

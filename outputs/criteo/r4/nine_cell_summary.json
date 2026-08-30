@@ -1,0 +1,14 @@
+{
+  "source_winner_equals_point_estimated_target_best": 0,
+  "source_winner_differs_from_point_estimated_target_best": 9,
+  "benchmark_resolved_nonzero_regret_cells": 3,
+  "benchmark_point_below_frozen_r2_bound": 9,
+  "max_target_benchmark_point_regret": 0.0004238162783536,
+  "max_target_benchmark_point_regret_bp": 4.2381627835360005,
+  "max_r2_upper_regret_bound": 0.0005838047359264,
+  "max_r2_upper_regret_bound_bp": 5.838047359263999,
+  "nine_cell_point_regret_mae": 7.77894013022111e-05,
+  "nine_cell_point_regret_correlation": 0.6535006533258406,
+  "min_r2_bound_minus_benchmark_point": 8.92770929601e-05,
+  "all_target_ipw_regret_below_r2_bound": true
+}

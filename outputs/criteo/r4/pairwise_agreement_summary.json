@@ -1,0 +1,13 @@
+{
+  "n_contrasts": 45,
+  "r2_vs_target_mae": 7.859468211451763e-05,
+  "r2_vs_target_rmse": 9.888877443384268e-05,
+  "r2_vs_target_correlation": 0.6749918740144897,
+  "r2_vs_target_sign_agreement": 0.7555555555555555,
+  "r2_upper_above_target_point_count": 44,
+  "r2_upper_above_target_point_fraction": 0.9777777777777777,
+  "target_aipw_vs_ipw_mae": 0.00011643367995809653,
+  "target_aipw_vs_ipw_rmse": 0.00016228917771852854,
+  "target_aipw_vs_ipw_correlation": 0.6753671083105759,
+  "target_aipw_vs_ipw_sign_agreement": 0.8222222222222222
+}

@@ -1,0 +1,4 @@
+scenario,propensity_p001_pass_ge_05,propensity_p999_pass_le_98,inverse_weight_p999_pass_le_25,calibration_in_large_pass_le_002,max_bin_calibration_pass_le_01,weighted_balance_pass_max_smd_le_02,weighted_pc1_decile_pass_dev_le_01,budget_fidelity_pass_within_005,target_treatment_outcome_blinding_pass,source_infer_outcome_blinding_pass
+null_ess1.0,True,True,True,True,True,True,True,False,True,True
+pc1_ess0.8,True,True,True,True,True,True,False,False,True,True
+pc1_ess0.5,True,True,True,True,True,True,False,False,True,True

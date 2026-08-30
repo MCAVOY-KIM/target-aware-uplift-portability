@@ -1,0 +1,8 @@
+{
+  "r12_policies_outside_budget_tolerance": 8,
+  "r1f_policies_outside_budget_tolerance": 0,
+  "max_r1f_budget_deviation": 0.0011039564339525576,
+  "max_invalid_r12_budget_deviation": 0.45603879838619077,
+  "all_train_rates_exact": false,
+  "note": "R1F recomputes and applies top-q cutoffs in-memory; saved hex strings are provenance only."
+}

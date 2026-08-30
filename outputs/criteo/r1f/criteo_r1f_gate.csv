@@ -1,0 +1,2 @@
+all_source_train_budgets_exact,all_source_select_budgets_within_005,all_gains_finite,nine_winners_defined,frozen_r12_propensity_models_reused,candidate_models_retrained,target_outcomes_used,source_infer_outcomes_used
+False,True,True,True,True,False,False,False

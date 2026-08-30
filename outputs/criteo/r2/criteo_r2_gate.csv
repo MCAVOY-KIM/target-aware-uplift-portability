@@ -1,0 +1,4 @@
+scenario,all_target_adapt_discrete_topq_exact,all_target_infer_policy_rates_within_005,estimated_ratio_ess_within_05_of_design,estimated_ratio_p999_pass_le_6,source_propensity_overlap_pass,all_15_contrasts_finite,correlation_psd_numeric_pass,target_treatment_outcomes_used,source_infer_outcomes_used
+null_ess1.0,True,True,True,True,True,True,True,False,True
+pc1_ess0.8,True,True,True,True,True,True,True,False,True
+pc1_ess0.5,True,True,True,True,True,True,True,False,True

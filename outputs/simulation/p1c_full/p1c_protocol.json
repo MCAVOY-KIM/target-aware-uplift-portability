@@ -1,0 +1,31 @@
+{
+  "stage": "P1-C Rare-Binary Robustness Gate",
+  "method_frozen_from": "P1-B.1",
+  "alpha": 0.05,
+  "epsilon": 0.005,
+  "budgets": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "p": 10,
+  "models": 6,
+  "treatment_probability": 0.85,
+  "source_control_rate": 0.04,
+  "source_treated_rate": 0.048,
+  "source_marginal_rate": 0.0468,
+  "binary_link": "probit",
+  "truth": "bivariate-normal analytic integration conditional on empirical target-adapt thresholds",
+  "split": {
+    "source_train": 0.3,
+    "source_select": 0.2,
+    "source_infer": 0.5,
+    "target_adapt": 0.25,
+    "target_infer": 0.75
+  },
+  "primary_family": "source-selected model vs 5 competitors across 3 budgets, one-sided simultaneous upper max-t",
+  "global_pairwise_family": "secondary only",
+  "rare_event_gate_logic": "prioritize anti-undercoverage; conservatism is reported rather than failed unless informativeness collapses",
+  "bootstrap_draws": 1500,
+  "seed_base": 202608272
+}

@@ -1,0 +1,17 @@
+name,n_source,n_target,ess_target,separation,shift_relevance,nuisance,reps
+core_n20000_ess0.8_near,20000,20000,0.8,near,relevant,both_correct,500
+core_n20000_ess0.8_clear,20000,20000,0.8,clear,relevant,both_correct,500
+core_n20000_ess0.5_near,20000,20000,0.5,near,relevant,both_correct,500
+core_n20000_ess0.5_clear,20000,20000,0.5,clear,relevant,both_correct,500
+core_n20000_ess0.3_near,20000,20000,0.3,near,relevant,both_correct,500
+core_n20000_ess0.3_clear,20000,20000,0.3,clear,relevant,both_correct,500
+core_n80000_ess0.8_near,80000,80000,0.8,near,relevant,both_correct,500
+core_n80000_ess0.8_clear,80000,80000,0.8,clear,relevant,both_correct,500
+core_n80000_ess0.5_near,80000,80000,0.5,near,relevant,both_correct,500
+core_n80000_ess0.5_clear,80000,80000,0.5,clear,relevant,both_correct,500
+core_n80000_ess0.3_near,80000,80000,0.3,near,relevant,both_correct,500
+core_n80000_ess0.3_clear,80000,80000,0.3,clear,relevant,both_correct,500
+stress_irrelevant,80000,80000,0.5,moderate,irrelevant,both_correct,300
+stress_outcome_misspec,80000,80000,0.5,moderate,relevant,outcome_misspecified,300
+stress_ratio_misspec,80000,80000,0.5,moderate,relevant,ratio_misspecified,300
+stress_both_misspec,80000,80000,0.5,moderate,relevant,both_misspecified,300

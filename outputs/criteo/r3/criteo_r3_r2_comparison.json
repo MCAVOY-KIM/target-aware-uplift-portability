@@ -1,0 +1,11 @@
+{
+  "n_pairwise_contrasts": 45,
+  "pairwise_mae": 7.859468211453184e-05,
+  "pairwise_rmse": 9.888877443385884e-05,
+  "pairwise_correlation": 0.6749918740144843,
+  "pairwise_sign_agreement": 0.7555555555555555,
+  "n_budget_cells": 9,
+  "benchmark_point_below_r2_bound_count": 9,
+  "source_winner_equals_target_best_count": 0,
+  "descriptive_portable_contradictions": 0
+}

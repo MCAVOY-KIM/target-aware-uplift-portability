@@ -1,0 +1,5 @@
+epsilon,epsilon_bp,n_cells,r2_portable,r2_uncertain,r2_nonportable,benchmark_regret_le_tolerance,false_portable_contradictions,conservative_abstentions
+0.0005,5.0,9,7,2,0,9,0,2
+0.001,10.0,9,9,0,0,9,0,0
+0.002,20.0,9,9,0,0,9,0,0
+0.005,50.0,9,9,0,0,9,0,0

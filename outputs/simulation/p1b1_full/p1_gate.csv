@@ -1,0 +1,17 @@
+scenario,global_pairwise_coverage_pass,source_specific_upper_coverage_pass,source_specific_bound_pass,source_specific_false_certificate_conditional_pass_le_05,clear_source_certificate_informativeness_pass_ge_70
+core_n5000_ess0.8_near,True,True,True,True,
+core_n5000_ess0.8_clear,True,True,True,True,
+core_n5000_ess0.5_near,True,True,True,True,
+core_n5000_ess0.5_clear,True,True,True,True,
+core_n5000_ess0.3_near,True,False,True,True,
+core_n5000_ess0.3_clear,True,True,True,True,
+core_n20000_ess0.8_near,True,True,True,True,
+core_n20000_ess0.8_clear,True,True,True,True,True
+core_n20000_ess0.5_near,True,True,True,True,
+core_n20000_ess0.5_clear,True,True,True,True,True
+core_n20000_ess0.3_near,False,False,True,True,
+core_n20000_ess0.3_clear,True,True,True,True,
+stress_irrelevant,False,True,True,True,
+stress_outcome_misspec,True,True,True,False,
+stress_ratio_misspec,True,True,True,True,
+stress_both_misspec,False,False,False,True,
