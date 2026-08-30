@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Append these lines to the repository root .gitignore.
+data/raw/
+reproduction_runs/
+*.joblib
+*.pkl
+*.pickle
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
