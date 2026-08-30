@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "Target-Aware Portability Assessment of Source-Selected Uplift Models under Population Shift"
+type: software
+authors:
+  - family-names: "Kim"
+    given-names: "Dongyeon"
+    orcid: "https://orcid.org/0009-0001-5151-2490"
+    affiliation: "Department of Big Data, Graduate School of Information and Communication Technology, Sungkyunkwan University, Seoul, Republic of Korea"
+repository-code: "https://github.com/MCAVOY-KIM/target-aware-uplift-portability"
+url: "https://github.com/MCAVOY-KIM/target-aware-uplift-portability"
+license: "MIT"
+version: "1.0-submission"
+date-released: 2026-08-30
+keywords:
+  - uplift modeling
+  - heterogeneous treatment effects
+  - covariate shift
+  - transportability
+  - policy evaluation
+  - target regret
