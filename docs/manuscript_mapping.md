@@ -1,26 +1,15 @@
-# Manuscript-to-artifact mapping
+# Manuscript-to-Repository Mapping
 
-This file maps manuscript claims to the code/output locations that should reproduce them. Paths are intentionally stable even before all files are populated.
-
-| Manuscript component | Reproducibility location | Status |
-|---|---|---|
-| Section III: target-regret estimand | `src/common/` + manuscript | theory / no data artifact |
-| Section IV: transported DR and simultaneous inference | `src/common/` | to populate |
-| Section V: exact-truth simulation | `src/simulation/`, `configs/simulation/`, `outputs/simulation/` | to populate |
-| Table II: simulation operating characteristics | `outputs/tables/` | to populate |
-| Figure 2: rare-binary operating boundary | `outputs/figures/` | to populate |
-| Section VI-A/B: Criteo data and emulated shift | `src/criteo/`, `configs/criteo/`, `provenance/` | to populate |
-| Table III: Criteo shift audit | `outputs/tables/` | to populate |
-| Section VI-C/D: source selection and outcome-blind portability | `src/criteo/`, `outputs/criteo/` | to populate |
-| Section VI-E/F: held-out target benchmark | `src/criteo/`, `outputs/criteo/` | to populate |
-| Table IV: portability vs benchmark | `outputs/tables/` | to populate |
-| Figure 3: frozen bound vs benchmark regret | `outputs/figures/` | to populate |
-| Supplement: provenance manifest | `provenance/` | initialized |
-
-## Core empirical manuscript facts to preserve
-
-- Candidate library: S-Logit, T-Logit, S-HGB, T-HGB, TO-HGB, DR-HGB.
-- Budgets: `q = {0.10, 0.30, 0.50}`.
-- Outcome-blind tolerance grid: `epsilon = {0.0005, 0.001, 0.002, 0.005}`.
-- Criteo role: secondary large-scale randomized real-data application with emulated covariate shift.
-- Target outcomes are unavailable during portability assessment and first unlocked only for the held-out benchmark.
+| Manuscript component | Repository evidence |
+|---|---|
+| Problem formulation / methodology | `src/`, manuscript equations |
+| Simulation study | `src/simulation/`, `outputs/simulation/` |
+| Rare-binary finite-sample limitations | P1-C source and full-gate outputs |
+| Criteo population shift | `src/criteo/criteo_r0_audit.py`, `criteo_r01_shift_materialization.py` |
+| Fixed model library / source selection | R1/R11/R12/R1F sources and outputs |
+| Outcome-blind portability assessment | R2 source and `outputs/criteo/r2/` |
+| Held-out target benchmark | R3 source and `outputs/criteo/r3/` |
+| Evidence synthesis | R4 source and `outputs/criteo/r4/` |
+| Outcome-unlock provenance | `provenance/freeze_logs/`, `docs/criteo_execution_chain.md` |
+| Environment | `environment/` |
+| Manuscript-facing assets | compact outputs plus `scripts/reproduce_manuscript_assets.py` |

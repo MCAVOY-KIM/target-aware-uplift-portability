@@ -1,26 +1,27 @@
-# Data access and integrity
+# Data Access
 
 ## CRITEO-UPLIFT v2.1
 
-This project uses the public randomized CRITEO-UPLIFT benchmark. The raw data are not redistributed in this repository.
+The raw dataset is not distributed in this repository.
 
-Official dataset information page:
+Official dataset page:
 
-- https://ailab.criteo.com/criteo-uplift-prediction-dataset/
+`https://ailab.criteo.com/criteo-uplift-prediction-dataset/`
 
-Expected local filename:
-
-```text
-criteo-research-uplift-v2.1.csv.gz
-```
-
-Expected row count:
+Expected local file:
 
 ```text
-13,979,592
+data/raw/criteo-research-uplift-v2.1.csv.gz
 ```
 
-Expected variables used by the project include pretreatment features `f0`-`f11`, treatment, visit, and conversion. The post-treatment `exposure` variable is not used as a predictor.
+Frozen properties used by this study:
+
+- rows: 13,979,592
+- pretreatment covariates: `f0` through `f11`
+- treatment column: `treatment`
+- primary outcome: `visit`
+- secondary outcome: `conversion`
+- `exposure` is not used as a predictor because it may be post-treatment
 
 Expected SHA-256:
 
@@ -28,28 +29,10 @@ Expected SHA-256:
 2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc
 ```
 
-Verify locally:
-
-### PowerShell
-
-```powershell
-(Get-FileHash .\data\raw\criteo-research-uplift-v2.1.csv.gz -Algorithm SHA256).Hash.ToLower()
-```
-
-### Python
-
-Use:
+After downloading, run:
 
 ```bash
-python scripts/verify_checksums.py
+python scripts/verify_raw_data.py
 ```
 
-## Non-redistribution rule
-
-Do not commit:
-
-- raw Criteo data;
-- derived files that contain row-level source data when redistribution rights are unclear;
-- local caches or serialized raw-data subsets.
-
-Public reproducibility should rely on code, configuration, checksums, aggregate/frozen outputs, and documented download instructions.
+The reproduction scripts stop if the expected raw file is missing. Do not commit the raw dataset to Git.
