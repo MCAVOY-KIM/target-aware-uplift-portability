@@ -1,0 +1,7 @@
+{
+  "windows_crlf_source_verification_returncode": 0,
+  "windows_crlf_source_verification_stdout": "Frozen source canonical-LF manifest (11 files): PASS\nR2/R3 frozen evidence raw-byte hash chain: PASS\nFrozen repository verification: PASS\n",
+  "asset_regeneration_returncode": 0,
+  "asset_regeneration_stdout": "Table IV semantic equality with frozen table: PASS\nManuscript assets regenerated under reproduction_runs/manuscript_assets.\nFigure 2: /mnt/data/_cross_platform_fix_test/reproduction_runs/manuscript_assets/figures/figure2_simulation_operating_boundary.png\nFigure 3: /mnt/data/_cross_platform_fix_test/reproduction_runs/manuscript_assets/figures/figure3_criteo_portability_benchmark.png\nTable IV: /mnt/data/_cross_platform_fix_test/reproduction_runs/manuscript_assets/tables/table4_criteo_portability_benchmark.csv\n",
+  "tracked_frozen_assets_unchanged_after_regeneration": true
+}

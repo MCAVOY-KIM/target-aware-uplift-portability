@@ -1,17 +1,19 @@
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
+from pandas.testing import assert_frame_equal
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "outputs"
-FIG = OUT / "figures"
-TAB = OUT / "tables"
+FROZEN = ROOT / "outputs"
+RUN = ROOT / "reproduction_runs" / "manuscript_assets"
+FIG = RUN / "figures"
+TAB = RUN / "tables"
 FIG.mkdir(parents=True, exist_ok=True)
 TAB.mkdir(parents=True, exist_ok=True)
 
 
 def reproduce_simulation_figure():
-    df = pd.read_csv(OUT / "simulation" / "rare_binary_operating_characteristics.csv")
+    df = pd.read_csv(FROZEN / "simulation" / "rare_binary_operating_characteristics.csv")
     core = df[df["regime"] == "core"].copy()
     core["label"] = core.apply(
         lambda r: f"{int(r.source_n/1000)}k/{r.design_ess:g}/{r.separation}", axis=1
@@ -29,16 +31,28 @@ def reproduce_simulation_figure():
     ax.set_title("Finite-Sample Operating Boundary in Rare-Binary Simulations")
     ax.legend()
     fig.tight_layout()
-    fig.savefig(FIG / "figure2_simulation_operating_boundary.png", dpi=300, bbox_inches="tight")
+    out = FIG / "figure2_simulation_operating_boundary.png"
+    fig.savefig(out, dpi=300, bbox_inches="tight")
     plt.close(fig)
+    return out
 
 
-def reproduce_criteo_figure():
-    bounds = pd.read_csv(OUT / "criteo" / "r2_budget_bounds.csv")
-    bench = pd.read_csv(OUT / "criteo" / "r3_budget_benchmark.csv")
-    df = bounds.merge(bench, on=["scenario", "budget", "source_selected_model"], validate="one_to_one")
-    shift = {"null_ess1.0": "No shift", "pc1_ess0.8": "Moderate", "pc1_ess0.5": "Stronger"}
+def reproduce_criteo_assets():
+    bounds = pd.read_csv(FROZEN / "criteo" / "r2_budget_bounds.csv")
+    bench = pd.read_csv(FROZEN / "criteo" / "r3_budget_benchmark.csv")
+    df = bounds.merge(
+        bench,
+        on=["scenario", "budget", "source_selected_model"],
+        validate="one_to_one",
+    )
+
+    shift = {
+        "null_ess1.0": "No shift",
+        "pc1_ess0.8": "Moderate",
+        "pc1_ess0.5": "Stronger",
+    }
     df["label"] = df.apply(lambda r: f"{shift[r.scenario]}\nq={r.budget:g}", axis=1)
+
     fig, ax = plt.subplots(figsize=(10.5, 5.5))
     x = range(len(df))
     ax.plot(x, df["upper_regret_bound"], marker="o", label="Frozen outcome-blind upper regret bound")
@@ -52,12 +66,35 @@ def reproduce_criteo_figure():
     ax.ticklabel_format(axis="y", style="sci", scilimits=(0, 0))
     ax.legend()
     fig.tight_layout()
-    fig.savefig(FIG / "figure3_criteo_portability_benchmark.png", dpi=300, bbox_inches="tight")
+    fig_out = FIG / "figure3_criteo_portability_benchmark.png"
+    fig.savefig(fig_out, dpi=300, bbox_inches="tight")
     plt.close(fig)
-    df.to_csv(TAB / "table4_criteo_portability_benchmark.csv", index=False)
+
+    table_out = TAB / "table4_criteo_portability_benchmark.csv"
+    df.to_csv(table_out, index=False, lineterminator="\n")
+
+    # Semantic table check against the frozen repository table.
+    frozen_table = FROZEN / "tables" / "table4_criteo_portability_benchmark.csv"
+    if frozen_table.is_file():
+        old = pd.read_csv(frozen_table)
+        new = pd.read_csv(table_out)
+        assert_frame_equal(
+            old,
+            new,
+            check_dtype=False,
+            check_exact=False,
+            rtol=1e-12,
+            atol=1e-15,
+        )
+        print("Table IV semantic equality with frozen table: PASS")
+
+    return fig_out, table_out
 
 
 if __name__ == "__main__":
-    reproduce_simulation_figure()
-    reproduce_criteo_figure()
-    print("Manuscript assets regenerated from frozen compact outputs.")
+    f2 = reproduce_simulation_figure()
+    f3, t4 = reproduce_criteo_assets()
+    print("Manuscript assets regenerated under reproduction_runs/manuscript_assets.")
+    print("Figure 2:", f2)
+    print("Figure 3:", f3)
+    print("Table IV:", t4)

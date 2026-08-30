@@ -27,37 +27,51 @@ R4_EXPECTED = {
         "2dce7faa555bc15ab565835289276ef02e8e1190514cd3fcf77df49aa5079f08",
 }
 
-def sha(path: Path) -> str:
+def sha_raw(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
-def check(path: Path, expected: str, label: str):
+def sha_canonical_lf(path: Path) -> str:
+    # Git may materialize text files as CRLF on Windows depending on user config.
+    # Source-integrity hashes therefore use a canonical LF representation.
+    data = path.read_bytes()
+    data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(data).hexdigest()
+
+def require_hash(path: Path, expected: str, label: str, canonical_lf=False):
     if not path.is_file():
         raise RuntimeError(f"Missing {label}: {path}")
-    got = sha(path)
+    got = sha_canonical_lf(path) if canonical_lf else sha_raw(path)
     if got != expected:
+        mode = "canonical-LF" if canonical_lf else "raw-byte"
         raise RuntimeError(
-            f"Hash mismatch for {label}: expected={expected} got={got}"
+            f"Hash mismatch for {label} ({mode}): expected={expected} got={got}"
         )
 
 def main():
-    # Verify every imported frozen source if the complete manifest exists.
-    manifest = ROOT / "provenance/checksums/source_sha256_complete.csv"
-    if manifest.is_file():
-        with manifest.open(newline="", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                check(ROOT / row["repository_path"], row["sha256"], row["repository_path"])
-        print("Frozen source manifest: PASS")
-    else:
-        print("Frozen source manifest: SKIPPED (manifest not found)")
+    manifest = ROOT / "provenance/checksums/source_sha256_canonical_lf.csv"
+    if not manifest.is_file():
+        raise RuntimeError(f"Missing source-integrity manifest: {manifest}")
 
+    with manifest.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    if len(rows) != 11:
+        raise RuntimeError(f"Expected 11 frozen source records, found {len(rows)}")
+
+    for row in rows:
+        require_hash(
+            ROOT / row["repository_path"],
+            row["sha256_canonical_lf"],
+            row["repository_path"],
+            canonical_lf=True,
+        )
+    print(f"Frozen source canonical-LF manifest ({len(rows)} files): PASS")
+
+    # Frozen evidence artifacts retain byte-level hashes.
     for rel, expected in R4_EXPECTED.items():
-        check(ROOT / rel, expected, rel)
-    print("R2/R3 frozen evidence hash chain: PASS")
+        require_hash(ROOT / rel, expected, rel, canonical_lf=False)
+    print("R2/R3 frozen evidence raw-byte hash chain: PASS")
 
-    r11 = ROOT / "src/criteo/criteo_r11_budget_randomization_audit.py"
-    expected_r11 = "fa011f1d63e0394174e73e48989ad4b80882827c1c6c990b61fe4bbd29e3176e"
-    check(r11, expected_r11, "R11 frozen source")
-    print("R11 dependency hash: PASS")
     print("Frozen repository verification: PASS")
 
 if __name__ == "__main__":
