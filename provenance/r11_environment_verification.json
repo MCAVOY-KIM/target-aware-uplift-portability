@@ -1,0 +1,22 @@
+{
+  "r11_source_sha256": "fa011f1d63e0394174e73e48989ad4b80882827c1c6c990b61fe4bbd29e3176e",
+  "r11_matches_r12_expected_hash": true,
+  "source_file_count": 11,
+  "requirements_preserved_verbatim": true,
+  "direct_dependency_audit": {
+    "declared_and_direct": [
+      "numpy",
+      "pandas",
+      "scipy",
+      "scikit-learn"
+    ],
+    "direct_but_not_explicitly_declared": [
+      "joblib",
+      "matplotlib"
+    ],
+    "declared_but_not_directly_imported_in_frozen_source_set": [
+      "lightgbm",
+      "huggingface_hub"
+    ]
+  }
+}

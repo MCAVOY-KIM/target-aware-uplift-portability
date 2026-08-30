@@ -1,0 +1,23 @@
+{
+  "stage": "Criteo R1.1 Budget Fidelity and Randomization Audit",
+  "frozen_r1_source_sha256": "1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e",
+  "tie_seed": 2026082806,
+  "tie_rule": "lexicographic top-q: score descending, independent row-hash U ascending among exact score ties",
+  "budgets": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "propensity_used_for_source_selection": 0.85,
+  "target_outcomes_used": false,
+  "source_infer_outcomes_used": false,
+  "randomization_gates": {
+    "max_abs_feature_smd": 0.02,
+    "max_pc1_decile_rate_deviation": 0.005,
+    "treatment_prediction_auc": 0.51
+  },
+  "budget_gate": {
+    "train_exact": true,
+    "source_select_abs_deviation": 0.005
+  }
+}

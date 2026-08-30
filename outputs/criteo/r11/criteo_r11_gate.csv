@@ -1,0 +1,4 @@
+scenario,all_train_budgets_exact,all_select_budget_rates_within_005,max_feature_smd_pass_le_02,pc1_decile_randomization_pass_dev_le_005,treatment_predictability_auc_pass_le_51,all_selection_finite,frozen_models_load_pass,target_outcomes_used,source_infer_outcomes_used
+null_ess1.0,True,True,False,False,False,True,True,False,False
+pc1_ess0.8,True,True,False,False,False,True,True,False,False
+pc1_ess0.5,True,True,False,False,False,True,True,False,False

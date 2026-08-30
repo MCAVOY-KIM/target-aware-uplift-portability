@@ -1,0 +1,9 @@
+{
+  "stage": "Criteo R1.1 Budget Fidelity and Randomization Audit",
+  "all_gate_pass": false,
+  "winner_changes": 0,
+  "max_original_budget_violation_observed_in_r1": 0.4560388,
+  "target_outcomes_used": false,
+  "source_infer_outcomes_used": false,
+  "next_if_pass": "Freeze corrected source winners and lexicographic tie rule; proceed R2."
+}
