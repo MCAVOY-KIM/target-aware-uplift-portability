@@ -1,0 +1,4 @@
+seed_name,value,role,status
+criteo_membership_seed,2026082803,"Deterministic target-membership uniform reused across shift strengths",frozen
+criteo_source_target_role_seed,2026082805,"Independent source/target role assignment",frozen
+criteo_topq_tie_seed,2026082806,"Exact discrete top-q tie breaking",frozen

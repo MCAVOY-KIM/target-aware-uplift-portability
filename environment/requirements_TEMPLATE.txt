@@ -1,0 +1,7 @@
+# TEMPLATE ONLY — replace with the exact final submission environment.
+# Do not publish this file as the final environment specification.
+#
+# Recommended workflow:
+#   python scripts/capture_environment.py
+#   inspect environment/pip-freeze.txt
+#   create the final requirements.txt or environment.yml from the verified environment.

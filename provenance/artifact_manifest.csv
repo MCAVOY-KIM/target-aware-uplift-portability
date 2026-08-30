@@ -1,0 +1,10 @@
+artifact,stage,local_path,sha256,redistribution,status,notes
+CRITEO-UPLIFT v2.1 raw data,R0,data/raw/criteo-research-uplift-v2.1.csv.gz,2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc,external-only,verified,"13,979,592 rows; do not commit raw data"
+R1 source artifact,R1,,1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e,metadata-only,verified,"Frozen source-side artifact hash used by R2/R3"
+R1F winner artifact,R1F,,3e547e2a75829cc257c7f38aae200c2acedc9caeba441f6841c64db21af0cdfe,metadata-only,verified,"Final source winners after technical materialization correction"
+R1F selection artifact,R1F,,6cff4bc7cafd03cc95fc4fd7be11816830044f3f055b0881298fedb78aefd83d,metadata-only,verified,"Source-selection artifact"
+R2 pairwise contrasts,R2,,5949d500efbc74a0fe033f81eb47ed6374f158c378b64d453ffa240c398b7a23,metadata-only,verified,"45-row frozen transported contrast artifact"
+R2 source-specific bounds,R2,,674ffed3be874de1fb6c76f376d6d726288dc9eaefdeb4e99d656888dcd3cbba,metadata-only,verified,"Frozen source-specific regret-bound artifact"
+R2 decision rules,R2,,fcd9a4fd92540119948868ffe840121d5b44362700e9213a7839b4178d10e224,metadata-only,verified,"Frozen portability decision-rule artifact"
+R2 ratio audit,R2,,2b01c556a943ce9fecdde1a7543b60c1aa78840f61fd6196cb04b0587e38138a,metadata-only,verified,"Estimated/oracle density-ratio audit"
+R2 summary,R2,,52bae0852cea4f69de511cba45c9c10316f08712b98095f72f2c33bd2d08efa7,metadata-only,verified,"Frozen target-outcome-blind summary"
