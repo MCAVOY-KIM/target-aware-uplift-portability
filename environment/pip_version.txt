@@ -1,0 +1,2 @@
+﻿pip 26.2.1 from C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\.venv\Lib\site-packages\pip (python 3.11)
+

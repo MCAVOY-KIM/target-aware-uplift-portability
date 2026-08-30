@@ -1,0 +1,16 @@
+{
+  "captured_on": "2026-08-30",
+  "label": "captured project environment",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "direct_frozen_source_dependencies": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.11.1"
+  },
+  "full_lockfile": "requirements_lock_captured.txt",
+  "historical_exactness_claimed": false
+}
