@@ -1,0 +1,10 @@
+scenario,budget,source_selected_model,target_aipw_point_best,benchmark_point_regret,benchmark_lower_regret_positive,frozen_r2_upper_bound,benchmark_point_below_frozen_bound
+null_ess1.0,0.1,TO-HGB,S-HGB,0.000086,false,0.000451,true
+null_ess1.0,0.3,TO-HGB,S-HGB,0.000424,true,0.000584,true
+null_ess1.0,0.5,TO-HGB,S-HGB,0.000325,true,0.000526,true
+pc1_ess0.8,0.1,TO-HGB,S-HGB,0.000149,false,0.000239,true
+pc1_ess0.8,0.3,TO-HGB,S-HGB,0.000180,false,0.000283,true
+pc1_ess0.8,0.5,TO-HGB,DR-HGB,0.000154,false,0.000351,true
+pc1_ess0.5,0.1,DR-HGB,S-HGB,0.000142,true,0.000270,true
+pc1_ess0.5,0.3,TO-HGB,S-HGB,0.000031,false,0.000278,true
+pc1_ess0.5,0.5,TO-HGB,S-HGB,0.000056,false,0.000150,true

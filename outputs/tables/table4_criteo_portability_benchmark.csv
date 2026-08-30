@@ -1,0 +1,19 @@
+scenario,budget,source_selected_model,point_regret_estimate,upper_regret_bound,lower_regret_bound,target_aipw_point_best,benchmark_point_regret,benchmark_lower_regret_positive,frozen_r2_upper_bound,benchmark_point_below_frozen_bound,label
+null_ess1.0,0.1,TO-HGB,0.000211,0.000451,0.0,S-HGB,8.6e-05,False,0.000451,True,"No shift
+q=0.1"
+null_ess1.0,0.3,TO-HGB,0.000258,0.000584,0.0,S-HGB,0.000424,True,0.000584,True,"No shift
+q=0.3"
+null_ess1.0,0.5,TO-HGB,0.000216,0.000526,0.0,S-HGB,0.000325,True,0.000526,True,"No shift
+q=0.5"
+pc1_ess0.8,0.1,TO-HGB,7.4e-05,0.000239,0.0,S-HGB,0.000149,False,0.000239,True,"Moderate
+q=0.1"
+pc1_ess0.8,0.3,TO-HGB,8.7e-05,0.000283,0.0,S-HGB,0.00018,False,0.000283,True,"Moderate
+q=0.3"
+pc1_ess0.8,0.5,TO-HGB,0.000169,0.000351,0.0,DR-HGB,0.000154,False,0.000351,True,"Moderate
+q=0.5"
+pc1_ess0.5,0.1,DR-HGB,0.000129,0.00027,0.0,S-HGB,0.000142,True,0.00027,True,"Stronger
+q=0.1"
+pc1_ess0.5,0.3,TO-HGB,0.000135,0.000278,0.0,S-HGB,3.1e-05,False,0.000278,True,"Stronger
+q=0.3"
+pc1_ess0.5,0.5,TO-HGB,5.6e-05,0.00015,0.0,S-HGB,5.6e-05,False,0.00015,True,"Stronger
+q=0.5"

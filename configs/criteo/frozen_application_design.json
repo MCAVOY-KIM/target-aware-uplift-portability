@@ -1,0 +1,36 @@
+{
+  "dataset": {
+    "name": "CRITEO-UPLIFT v2.1",
+    "expected_file": "data/raw/criteo-research-uplift-v2.1.csv.gz",
+    "sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+    "rows": 13979592,
+    "features": ["f0","f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11"],
+    "primary_outcome": "visit",
+    "secondary_outcome": "conversion",
+    "excluded_predictor": "exposure"
+  },
+  "population_shift": {
+    "mechanism": "X-only PCA PC1 logistic membership",
+    "target_share": 0.5,
+    "design_ess_ratios": [1.0, 0.8, 0.5],
+    "treatment_outcomes_used_for_shift": false
+  },
+  "roles": {
+    "source_train": 0.30,
+    "source_select": 0.20,
+    "source_infer": 0.50,
+    "target_adapt": 0.25,
+    "target_infer": 0.75
+  },
+  "seeds": {
+    "membership": 2026082803,
+    "roles": 2026082805,
+    "topq_tie_break": 2026082806
+  },
+  "budgets": [0.10, 0.30, 0.50],
+  "epsilon_grid": [0.0005, 0.001, 0.002, 0.005],
+  "candidate_library": ["S-Logit", "T-Logit", "S-HGB", "T-HGB", "TO-HGB", "DR-HGB"],
+  "primary_inference": "estimated source-to-target density ratio + transported DR + one-sided Gaussian max-t upper family",
+  "ratio_sensitivity": "oracle emulated-membership ratio with target outcomes still hidden",
+  "criteo_role": "secondary large-scale real-data application/benchmark"
+}

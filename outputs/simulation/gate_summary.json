@@ -1,0 +1,19 @@
+{
+  "p1b1": {
+    "core_global_pairwise_coverage_pass": false,
+    "core_source_specific_upper_coverage_pass": false,
+    "core_source_specific_bound_pass": true,
+    "core_source_specific_false_cert_pass": true,
+    "clear_source_certificate_informativeness_pass": true,
+    "dr_one_nuisance_misspec_source_upper_coverage_pass": true
+  },
+  "p1c": {
+    "core_anti_undercoverage_pass": false,
+    "core_bound_pass": true,
+    "core_familywise_false_cert_pass": true,
+    "core_outcome_fit_pass": true,
+    "clear_n80000_stress_informativeness_pass": true,
+    "dr_one_nuisance_misspec_pass": true
+  },
+  "interpretation": "The Gaussian simultaneous procedure is asymptotic. Finite-sample undercoverage is retained as a limitation; decision-oriented regret-bound and false-certification diagnostics are reported separately."
+}

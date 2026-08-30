@@ -1,0 +1,13 @@
+{
+  "pairwise_contrasts": 45,
+  "mae": 0.000078594682,
+  "rmse": 0.000098888774,
+  "pearson_correlation": 0.674991874,
+  "sign_agreement": 0.755555556,
+  "heldout_point_at_or_below_corresponding_frozen_upper": 44,
+  "heldout_point_exceedances": 1,
+  "budget_cells": 9,
+  "budget_level_benchmark_point_below_frozen_bound": 9,
+  "source_selected_equals_point_estimated_target_best": 0,
+  "interpretation": "Descriptive benchmark comparison only; not finite-sample confidence-coverage validation."
+}

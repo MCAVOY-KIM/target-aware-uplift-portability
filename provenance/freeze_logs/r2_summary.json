@@ -1,0 +1,14 @@
+{
+  "stage": "Criteo R2 Target-Outcome-Blind Portability Assessment",
+  "r1_source_sha256": "1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e",
+  "r1f_winner_sha256": "3e547e2a75829cc257c7f38aae200c2acedc9caeba441f6841c64db21af0cdfe",
+  "r1f_selection_sha256": "6cff4bc7cafd03cc95fc4fd7be11816830044f3f055b0881298fedb78aefd83d",
+  "primary_inference": "estimated source-to-target density ratio + transported DR + one-sided Gaussian max-t upper family",
+  "ratio_sensitivity": "oracle emulated-membership ratio, outcomes still hidden",
+  "epsilon_grid": [0.0005, 0.001, 0.002, 0.005],
+  "target_treatment_outcomes_used": false,
+  "source_infer_outcomes_used": true,
+  "all_technical_gates_pass": true,
+  "r12_strict_propensity_gate": "FAIL remains permanent",
+  "criteo_role": "secondary large-scale real-data application/benchmark"
+}

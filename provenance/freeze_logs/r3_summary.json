@@ -1,0 +1,15 @@
+{
+  "stage": "Criteo R3 Frozen Target-Outcome Benchmark",
+  "r1_source_sha256": "1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e",
+  "r2_pairwise_sha256": "5949d500efbc74a0fe033f81eb47ed6374f158c378b64d453ffa240c398b7a23",
+  "r2_bounds_sha256": "674ffed3be874de1fb6c76f376d6d726288dc9eaefdeb4e99d656888dcd3cbba",
+  "r2_rules_sha256": "fcd9a4fd92540119948868ffe840121d5b44362700e9213a7839b4178d10e224",
+  "r2_ratio_audit_sha256": "2b01c556a943ce9fecdde1a7543b60c1aa78840f61fd6196cb04b0587e38138a",
+  "r2_summary_sha256": "52bae0852cea4f69de511cba45c9c10316f08712b98095f72f2c33bd2d08efa7",
+  "benchmark_estimator": "target-only AIPW on target_infer; target-adapt nuisance training",
+  "benchmark_sensitivity": "target-only propensity-adjusted IPW",
+  "r2_outputs_modified_after_unlock": false,
+  "all_r3_technical_gates_pass": true,
+  "comparison_metrics_are_descriptive_not_gates": true,
+  "criteo_role": "secondary large-scale real-data application/benchmark"
+}

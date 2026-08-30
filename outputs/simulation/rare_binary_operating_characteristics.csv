@@ -1,0 +1,17 @@
+regime,source_n,design_ess,separation,contrast_upper_coverage,all_budget_regret_bound_coverage,any_false_certificate
+core,20000,0.8,near,0.966,1.000,0
+core,20000,0.8,clear,0.910,1.000,0
+core,20000,0.5,near,0.956,1.000,0
+core,20000,0.5,clear,0.934,1.000,0
+core,20000,0.3,near,0.944,1.000,0
+core,20000,0.3,clear,0.942,1.000,0
+core,80000,0.8,near,0.950,0.998,0
+core,80000,0.8,clear,0.948,0.996,0
+core,80000,0.5,near,0.954,0.998,0
+core,80000,0.5,clear,0.910,0.998,0
+core,80000,0.3,near,0.934,1.000,0
+core,80000,0.3,clear,0.936,0.998,0
+stress_shift_irrelevant,80000,0.5,moderate,0.943,1.000,0
+stress_outcome_nuisance_misspecified,80000,0.5,moderate,0.943,1.000,0
+stress_density_ratio_nuisance_misspecified,80000,0.5,moderate,0.933,1.000,0
+stress_both_nuisances_misspecified,80000,0.5,moderate,0.920,1.000,0

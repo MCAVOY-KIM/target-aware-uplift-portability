@@ -1,0 +1,12 @@
+{
+  "stage": "Criteo R1.2 Residual-Propensity Adjustment Gate",
+  "frozen_r1_source_sha256": "1c7fe26cebf45f9215c7ec8de54f06ec2e72eb8e72744b3fb2a8d392ae0f3e0e",
+  "frozen_r11_source_sha256": "fa011f1d63e0394174e73e48989ad4b80882827c1c6c990b61fe4bbd29e3176e",
+  "propensity_model": "scenario-specific standardized logistic regression; source_train X,A only; C=1",
+  "candidate_model_artifacts_retrained": false,
+  "target_outcomes_used": false,
+  "source_infer_outcomes_used": false,
+  "winner_changes_vs_r11": 3,
+  "all_gate_pass": false,
+  "status": "FAIL remains permanent"
+}
