@@ -12,6 +12,18 @@ FIG.mkdir(parents=True, exist_ok=True)
 TAB.mkdir(parents=True, exist_ok=True)
 
 
+def _normalize_text_line_endings(df: pd.DataFrame) -> pd.DataFrame:
+    """Normalize CRLF/CR embedded inside string cells to LF for semantic comparison."""
+    out = df.copy()
+    for col in out.columns:
+        if out[col].dtype == object:
+            out[col] = out[col].map(
+                lambda x: x.replace("\r\n", "\n").replace("\r", "\n")
+                if isinstance(x, str) else x
+            )
+    return out
+
+
 def reproduce_simulation_figure():
     df = pd.read_csv(FROZEN / "simulation" / "rare_binary_operating_characteristics.csv")
     core = df[df["regime"] == "core"].copy()
@@ -20,8 +32,10 @@ def reproduce_simulation_figure():
     )
     fig, ax = plt.subplots(figsize=(11, 5.5))
     x = range(len(core))
-    ax.plot(x, core["contrast_upper_coverage"], marker="o", label="Contrast upper coverage")
-    ax.plot(x, core["all_budget_regret_bound_coverage"], marker="s", label="All-budget regret-bound coverage")
+    ax.plot(x, core["contrast_upper_coverage"], marker="o",
+            label="Contrast upper coverage")
+    ax.plot(x, core["all_budget_regret_bound_coverage"], marker="s",
+            label="All-budget regret-bound coverage")
     ax.axhline(0.95, linestyle="--", linewidth=1, label="0.95 reference")
     ax.set_xticks(list(x))
     ax.set_xticklabels(core["label"], rotation=45, ha="right")
@@ -51,13 +65,18 @@ def reproduce_criteo_assets():
         "pc1_ess0.8": "Moderate",
         "pc1_ess0.5": "Stronger",
     }
-    df["label"] = df.apply(lambda r: f"{shift[r.scenario]}\nq={r.budget:g}", axis=1)
+    df["label"] = df.apply(
+        lambda r: f"{shift[r.scenario]}\nq={r.budget:g}", axis=1
+    )
 
     fig, ax = plt.subplots(figsize=(10.5, 5.5))
     x = range(len(df))
-    ax.plot(x, df["upper_regret_bound"], marker="o", label="Frozen outcome-blind upper regret bound")
-    ax.plot(x, df["benchmark_point_regret"], marker="s", label="Held-out AIPW benchmark point regret")
-    ax.axhline(0.0005, linestyle="--", linewidth=1, label="Tolerance epsilon = 0.0005")
+    ax.plot(x, df["upper_regret_bound"], marker="o",
+            label="Frozen outcome-blind upper regret bound")
+    ax.plot(x, df["benchmark_point_regret"], marker="s",
+            label="Held-out AIPW benchmark point regret")
+    ax.axhline(0.0005, linestyle="--", linewidth=1,
+               label="Tolerance epsilon = 0.0005")
     ax.set_xticks(list(x))
     ax.set_xticklabels(df["label"])
     ax.set_ylabel("Incremental visit-probability regret")
@@ -73,11 +92,10 @@ def reproduce_criteo_assets():
     table_out = TAB / "table4_criteo_portability_benchmark.csv"
     df.to_csv(table_out, index=False, lineterminator="\n")
 
-    # Semantic table check against the frozen repository table.
     frozen_table = FROZEN / "tables" / "table4_criteo_portability_benchmark.csv"
     if frozen_table.is_file():
-        old = pd.read_csv(frozen_table)
-        new = pd.read_csv(table_out)
+        old = _normalize_text_line_endings(pd.read_csv(frozen_table))
+        new = _normalize_text_line_endings(pd.read_csv(table_out))
         assert_frame_equal(
             old,
             new,

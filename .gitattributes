@@ -1,0 +1,22 @@
+# Make repository text representation deterministic across Windows/macOS/Linux.
+* text=auto
+
+*.py   text eol=lf
+*.csv  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Retain native Windows line endings for provenance PowerShell launchers.
+*.ps1  text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gz binary
+*.zip binary
+*.joblib binary
+*.pkl binary
+*.pickle binary

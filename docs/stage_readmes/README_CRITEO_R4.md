@@ -1,15 +1,17 @@
+> **Public-release note:** This is an archival stage note. Author-specific local paths were replaced with `<PROJECT_ROOT>`; use the repository-root reproduction commands in `docs/reproducibility.md` for current execution.
+
 # Target-Aware Portability — Criteo R4
 
 Place at:
 
-`C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\Target_Aware_Portability_Criteo_R4`
+`<PROJECT_ROOT>\Target_Aware_Portability_Criteo_R4`
 
 R4 uses only the already completed R2/R3 output folders. It does not read the raw Criteo data.
 
 ## Verify
 
 ```powershell
-cd "C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트"
+cd "<PROJECT_ROOT>"
 
 Test-Path ".\.venv\Scripts\python.exe"
 Test-Path ".\Target_Aware_Portability_Criteo_R2\05_outputs\criteo_r2"

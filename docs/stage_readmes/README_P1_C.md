@@ -1,21 +1,23 @@
+> **Public-release note:** This is an archival stage note. Author-specific local paths were replaced with `<PROJECT_ROOT>`; use the repository-root reproduction commands in `docs/reproducibility.md` for current execution.
+
 # Target-Aware Portability P1-C
 
 Place this folder at:
 
-`C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\Target_Aware_Portability_P1_C`
+`<PROJECT_ROOT>\Target_Aware_Portability_P1_C`
 
 Keep the previous `Target_Aware_Portability_P1_B1` folder unchanged.
 
 The package reuses:
 
-`C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\.venv`
+`<PROJECT_ROOT>\.venv`
 
 No Criteo file is needed yet.
 
 ## 1. Verify
 
 ```powershell
-cd "C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트"
+cd "<PROJECT_ROOT>"
 
 Test-Path ".\.venv\Scripts\python.exe"
 Test-Path ".\Target_Aware_Portability_P1_C\03_src\p1c_rare_binary_simulation.py"

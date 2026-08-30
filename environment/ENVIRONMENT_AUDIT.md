@@ -3,15 +3,11 @@
 ## Capture
 
 - Python: `Python 3.11.9`
-- pip: `pip 26.2.1 from C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\.venv\Lib\site-packages\pip (python 3.11)`
-- Platform:
-  ```
-  3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
-Windows-10-10.0.26200-SP0
-  ```
+- pip: `pip 26.2.1 (Python 3.11)`
+- Platform: `Windows-10-10.0.26200-SP0`
 
-The files in this directory were captured from the project's local
-`SCIE 논문 프로젝트/.venv` on 2026-08-30.
+The package snapshot in this directory was captured from the project's local
+virtual environment on 2026-08-30.
 
 ## Terminology
 
@@ -45,19 +41,19 @@ manuscript pipeline.
 
 ## Files
 
-- `pip_freeze.txt`: verbatim captured package snapshot.
-- `requirements_lock_captured.txt`: same full snapshot, named for installation use.
+- `pip_freeze.txt`: verbatim package-version snapshot.
+- `requirements_lock_captured.txt`: full captured package-version snapshot.
 - `requirements_frozen_source_direct.txt`: exact versions of packages directly
   imported by frozen manuscript source.
 - `python_version.txt`: captured Python version.
-- `pip_version.txt`: captured pip version.
+- `pip_version.txt`: sanitized pip version record without an author-local path.
 - `system_info.txt`: Python build and Windows platform information.
-- `verify_environment.py`: checks the principal package versions in an environment.
+- `verify_environment.py`: checks the principal package versions.
 
 ## Reproduction recommendation
 
-For archival fidelity, retain the full captured lockfile. For a clean
-reproduction environment, begin from Python 3.11 and install
+For archival fidelity, retain the full captured package-version snapshot. For a
+clean reproduction environment, begin from Python 3.11, install
 `requirements_lock_captured.txt`, then run the verification script and the
 stage-level frozen scripts.
 

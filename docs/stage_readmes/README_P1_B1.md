@@ -1,14 +1,16 @@
+> **Public-release note:** This is an archival stage note. Author-specific local paths were replaced with `<PROJECT_ROOT>`; use the repository-root reproduction commands in `docs/reproducibility.md` for current execution.
+
 # Target-Aware Portability P1-B.1
 
 Place this whole folder under:
 
-`C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\Target_Aware_Portability_P1_B1`
+`<PROJECT_ROOT>\Target_Aware_Portability_P1_B1`
 
 It uses the parent project's `.venv`.
 
 ## 1. Verify
 ```powershell
-cd "C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트"
+cd "<PROJECT_ROOT>"
 
 Test-Path ".\.venv\Scripts\python.exe"
 Test-Path ".\Target_Aware_Portability_P1_B1\03_src\p1_portability_simulation_b1.py"

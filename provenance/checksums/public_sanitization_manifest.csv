@@ -1,0 +1,2 @@
+repository_path,original_sha256,public_sha256,change
+outputs/criteo/r0/criteo_r0_summary.json,38183fef5e3ccee0824dca6a729b8bde74119928aed806583ffef654d462a0c8,202a2c424cddb289a0645ad3b6c4989a5b19438b18d01571fca71d3cff149107,Author-local data_path replaced by repository-relative data/raw path; scientific fields unchanged.

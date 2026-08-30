@@ -1,15 +1,17 @@
+> **Public-release note:** This is an archival stage note. Author-specific local paths were replaced with `<PROJECT_ROOT>`; use the repository-root reproduction commands in `docs/reproducibility.md` for current execution.
+
 # Target-Aware Portability — Criteo R1F
 
 Place at:
 
-`C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트\Target_Aware_Portability_Criteo_R1F`
+`<PROJECT_ROOT>\Target_Aware_Portability_Criteo_R1F`
 
 Keep all previous Criteo folders unchanged.
 
 ## Verify
 
 ```powershell
-cd "C:\Users\dykim\OneDrive\바탕 화면\SCIE 논문 프로젝트"
+cd "<PROJECT_ROOT>"
 
 Test-Path ".\.venv\Scripts\python.exe"
 Test-Path ".\02_data\raw\criteo-research-uplift-v2.1.csv.gz"
